@@ -10,17 +10,11 @@ class Worker1 extends Thread {
   }
 
   public void run() {
-    int wait = 200;
-
       s3.P();
         Main.shared_res = 0;
         System.out.println("\n[i] Shared res. state: " + Main.shared_res + " - Prod. START\n");
         Main.shared_res += 4;
         System.out.println("+ Worker #1, " + name + ", works: [+4] state " + Main.shared_res);
       s1.V();
-
-      try {
-        Thread.sleep(wait);
-      } catch (Exception e) {}
   }
 }

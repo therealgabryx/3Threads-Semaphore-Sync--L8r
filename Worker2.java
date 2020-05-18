@@ -10,15 +10,9 @@ class Worker2 extends Thread {
   }
 
   public void run() {
-    int wait = 200;
-
       s1.P();
         Main.shared_res += 3;
         System.out.println("+ Worker #2, " + name + ",  works: [+3] state " + Main.shared_res);
       s2.V();
-
-      try {
-        Thread.sleep(wait);
-      } catch (Exception e) {}
   }
 }
